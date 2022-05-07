@@ -16,13 +16,13 @@
 
   font-size: 62.5%; /* 1rem = 10px Foi feito uma regra de 3, colocando a medida em 10px para facilitar nas medidas*/
   
-  --var-height: 7.2rem;
+  --nav-height: 7.2rem;
 }
 
 html,
 body {
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 body {
@@ -31,15 +31,19 @@ body {
     font-size: 1.6rem;
 
     text-align: center;
+
+    overflow: overlay;
 }
 
 
 .wrapper {
     width: 37.5rem;
-    margin-right: auto;
-    margin-left: auto; /*mantém as boxes centralizadas*/
-    padding-inline: 2.4rem; 
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+    /*margin-right: auto;
+    margin-left: auto; mantém as boxes centralizadas*/
 }
+
 
 ul {
     list-style: none;
@@ -50,15 +54,15 @@ ul {
 /*========= HEADER==================================================*/
 
 header{
-    margin-top: calc( 4.1rem + var(--var-height));
+    margin-top: calc(4.1rem + var(--nav-height));
 }
 
 
-header ::before {
-    content: "";
-    width: 100vw;
-    height: calc( 108rem + var(--var-height));
-    background-color:var(--brand-light);
+header::before {
+    content: '';
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--brand-light);
     display: block;
 
     position: absolute;
@@ -98,35 +102,44 @@ header button {
     margin-bottom: 6rem;
     height: 6.2rem;
     width: 26.3rem;
-    color: white;
 
-    text-transform: uppercase; 
-    font-size:1.4rem;
+    color: white;
+    font-size: 1.4rem;
     font-weight: 700;
 
     text-transform: uppercase; 
 
-    display: :flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.6rem;
+
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto; /*mexe com o agende sua consulta*/
 }
 
-.stats    {   /*mexe nas caixas abaixo da moça. */
- width: 32.7rem;
- padding-block: 4rem;
- margin-inline: auto;
+header img { /*esta parte serve para fazer a imagem acompanhar o texto quando há zoom out e zoom in. */
 
- background-color: var(--brand-beige);
- border: 1px solid var(--brand-light);
- border-radius: 0.6rem; 
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem; /*lado esquerdo de 0 e lado direito de 2 rem*/
+}
 
- display: flex;
- flex-direction: column; /* coloca em colunas na vertical. Na horizontal é o display flex. */ 
- justify-content: center;
- gap: 6rem;
+
+.stats  {   /*mexe nas caixas abaixo da moça. */
+    width: 32.7rem;
+    padding-block: 4rem;
+    margin-inline: auto;
+
+    background-color: var(--brand-beige);
+    border: 1px solid var(--brand-light);
+    border-radius: 0.6rem; 
+
+    display: flex;
+    flex-direction: column; /* coloca em colunas na vertical. Na horizontal é o display flex. */ 
+    justify-content: center;
+    gap: 6rem;
 }
 
 .stat h3 {
@@ -135,7 +148,6 @@ header button {
     line-height: 130%;
     
     margin-bottom: 0.4rem;
-
 }
 
 .stat p{
@@ -146,21 +158,12 @@ header button {
 }
 
 
-header img {  /*esta parte serve para fazer a imagem acompanhar o texto quando há zoom out e zoom in. */
-    width: 26.4rem;
-    display: block;
-    margin-inline: auto;
-    object-position: 0 2rem;
-}
-
 
 /*==============NAVIGATION===========================*/ 
 
 nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
- 
+   
     /*
     padding-inline: 2.4rem;
     padding-block: 1.6rem;   *para unificar o padding inline e o block, use o padding: 1.6rem 2.4rem; nessa sequencia. altura x largura.
@@ -170,24 +173,39 @@ nav {
 
     position: fixed; /*Deixa a posição fixa. Para não deixar os elementos flutuantes. */
     top: 0;
-    left:50%;
-    transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);   
+}
+
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
 nav.scroll {
-
-    background-color: var(--primary-color);
-    width: 100%;
+    background: var(--primary-color);
+    width: 100vw;
+    position: fixed;
+    top: 0;
 }
+
 
 nav.scroll svg:nth-child(1) path {
     fill: white;
 }
 
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
     stroke: white;
+}
+
+nav button {
+    background: none;
+    border: none; 
+    cursor: pointer;  /*faz a interação com o cursor*/ 
 }
 
 
@@ -197,12 +215,19 @@ body.menu-expanded {
     overflow: hidden;
 }
 
+
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
+
 .menu,
 .close-menu, 
 body.menu-expanded .open-menu {
     opacity: 0;
     visibility: hidden;
 }
+
 
 body.menu-expanded .menu,
 body.menu-expanded .close-menu {
@@ -218,6 +243,8 @@ body.menu-expanded .menu {
     background: var(--primary-color);
     width: 100vw;
     height: 100vh;
+
+    padding-top: var(--nav-height);
 }
 
 
@@ -241,8 +268,8 @@ body.menu-expanded nav {
 .menu ul li a{
     color: white;
     text-decoration: none;
-
 }
+
 
 .menu .button {
     background: white;
