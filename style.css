@@ -13,6 +13,7 @@
 
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
+  --brand-dark: hsl(170, 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%, 1);
 
@@ -21,7 +22,7 @@
   --nav-height: 7.2rem;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -103,6 +104,52 @@ section .content p {
     color: var(--paragraph);
 
 }
+
+
+
+.button {
+
+    background: var(--primary-color);
+
+    border: none; 
+    border-radius: 4rem;
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+
+    padding: 1.6rem 3.2rem;  /*alturaxlargura. ele apagou height:6.2rem, width 26.3rem para colocar padding*/
+    width: fit-content; /* independente do conteúdo, ele irá se adaptar.*/
+
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    text-transform: uppercase; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+     /*mexe com o agende sua consulta*/
+
+    text-decoration: none;
+
+    transition: background 200ms;
+}
+
+
+.button:hover {
+    background-color: var(--brand-dark);
+}
+
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
 
 /*==============NAVIGATION===========================*/ 
 
@@ -215,7 +262,7 @@ body.menu-expanded .menu {
     line-height: 3.1rem;
 }
 
-.menu ul li a{
+.menu ul li a {
     color: white;
     text-decoration: none;
 }
@@ -241,13 +288,6 @@ body.menu-expanded .menu {
 }
 
 
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
-}
-
 
 body.menu-expanded .logo,
 body.menu-expanded button {
@@ -265,11 +305,9 @@ body.menu-expanded button path {
 
 
 
-
-
 /*=========#HOME==================================================*/
 
-#home{
+#home {
     padding-top: calc(4.1rem + var(--nav-height));
 }
 
@@ -287,6 +325,10 @@ body.menu-expanded button path {
     z-index: -1;
 }
 
+#home .button {
+    margin-inline: auto; /* tirou o margin-right: auto;
+    margin-left: auto; do .button para deixar aqui. */ 
+}
 
 
 #home p {
@@ -297,30 +339,6 @@ body.menu-expanded button path {
     margin-bottom: 3.2rem;
 }
 
-#home button {
-
-    background: var(--primary-color);
-
-    border: none; 
-    border-radius: 4rem;
-    margin-bottom: 6rem;
-    height: 6.2rem;
-    width: 26.3rem;
-
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 700;
-
-    text-transform: uppercase; 
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-
-    margin-right: auto;
-    margin-left: auto; /*mexe com o agende sua consulta*/
-}
 
 #home img { /*esta parte serve para fazer a imagem acompanhar o texto quando há zoom out e zoom in. */
 
@@ -354,44 +372,19 @@ body.menu-expanded button path {
     margin-bottom: 0.4rem;
 }
 
-#home .stat p{
+#home .stat p {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
     line-height: 150%;
 }
 
-/*==============ABOUT===========================*/
-
-#about{
-    text-align: left; /*sobre nós*/ 
-    background-color: var(--brand-beige);
-}
-
-
-#about h2{
-    margin-bottom: 2.4rem;
-}
-
-#about .content p {
-    margin-top: 2.4rem;
-    margin-bottom: 6rem;
-}
-
-
-
-
-
-
-
-
-
 
 /*==============SERVICES===========================*/
 
 
 
-#services h2{
+#services h2 {
     margin-bottom: 6rem;
 }
 
@@ -419,4 +412,109 @@ body.menu-expanded button path {
 #services .card h3 {
     margin-block: 1.6rem;
 
+}
+
+
+
+/*==============ABOUT===========================*/
+
+#about{
+    text-align: left; /*sobre nós*/ 
+    background-color: var(--brand-beige);
+}
+
+
+#about h2{
+    margin-bottom: 2.4rem;
+}
+
+#about .content p {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
+}
+
+
+/*==============CONTACT===========================*/
+
+#contact {
+    text-align: left;
+}
+
+
+#contact header {
+    margin-bottom: 3.2rem;
+
+}
+
+#contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    /* margin-bottom: 3.2rem; para empurrar o 2ndo botão para longe do link de contato. Ao invés de pegar o botão sozinho e descer.*/ 
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+
+/*==============FOOTER===========================*/
+
+
+footer {
+    background-color: var(--primary-color);
+    padding-block: 6rem;
+
+    text-align: left;
+
+    color: white;
+}
+
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+    /* display inline não aceita margin bottom, top, width nem heightm então, transforme-o em display inline block*/
+}
+
+footer .logo svg {
+    width: 23.6rem;
+    height: 3.1rem;
+}
+
+footer .logo path {
+    fill:white;
+}
+
+
+footer p {
+    color: var(--brand-beige);
+    line-height: 2;
+
+    margin-bottom: 3.2rem;
+}
+
+
+footer .social-links {
+    justify-content: flex-start; /*ou poõe left*/ 
+    margin-top: 5rem; /* coloquei icones do social links para baixo para alinhá-los.*/
+}
+
+
+/* back to top */ 
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
 }
