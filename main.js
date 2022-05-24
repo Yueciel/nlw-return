@@ -8,7 +8,9 @@ function onScroll() {
 
 
   activateMenuAtCurrentSection(home)
-  //activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
 }
 
 function activateMenuAtCurrentSection(section) {
@@ -70,9 +72,15 @@ sectionEndPassendTargetLine
 //limite da seção 
 const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
 
+const sectionId = section.getAttribute('id')
+const menuElement = document.querySelector(`.menu a [href*=${sectionId}]`)
 
+
+
+menuElement.Element.classList.remove('active')
 if (sectionBoundaries) {
-console.log('Estou na seção home')
+    menuElement.classList.add('active')
+//console.log('Estou na seção home')
 }
 
 }
