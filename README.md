@@ -21,6 +21,9 @@ A NLW Return - DoctorCare é uma página institucional em formato One Page, resp
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
+---
+
+🌀 LinkedIn: https://www.linkedin.com/in/raquel-scherer-502643231/
 
 
 author: Raquel 
