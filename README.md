@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
- <img alt="GitHub" src=" >
+ <img alt="GitHub" src="https://img.shields.io/github/license/yueciel/nlw-return?style=flat-square" >
 </p>
 
 ## 📄 Sobre o projeto
